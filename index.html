@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <!--
+    include the angular js script file (required) 
+  -->
+     <script src="https://code.angularjs.org/1.4.8/angular.js" data-semver="1.4.8" data-require="angular.js@1.4.8"></script>
+       <!--
+    include your custom scripts depending on your app requirements (required in this example) 
+  -->
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app="TimesCalculator">
+    <h1>n Times Calculator</h1>
+    <div ng-controller="TwoTimesController">
+         <!--
+    ng-model directive binds the value of HTML controls to the application data. 
+    using ng-model="num"  stores the value of the textbox in "num" which can be accessed using another expression in the same scope
+    ng-init is used to initialize values of the application data
+  -->
+      <div>2 times <input ng-model="num" ng-init="num=2" /></div>
+               <!--
+    we use the data in "num" and pass it as an argument of the method multiply() which returns the result of the multiplication
+  -->
+      <h1>{{ multiply(num) }}</h1>
+    </div>
+    <div ng-controller="ThreeTimesController">
+      <div>3 times <input ng-model="num" ng-init="num=3" /></div>
+      <h1>{{ multiply(num) }}</h1>
+    </div>
+  </body>
+
+</html>
